@@ -15,8 +15,8 @@ class HelloController extends AppController
 
   public function index()
   {
-    $id = $this->request->query['id'];
-    $pass = $this->request->query['pass'];
+    $id = $this->request->query['id'] ?? 'no id';
+    $pass = $this->request->query['pass'] ?? 'no pass';
 
     $this->p('HelloControllerのindexアクションです');
     $this->p('id : ' . $id);
