@@ -6,8 +6,6 @@ use App\Controller\AppController;
 
 class HelloController extends AppController
 {
-  public $autoRender = false;
-
   private $data = [
     ['name' => 'エラー', 'mail' => 'エラー', 'tel' => 'エラー'],
     ['name' => '1人目', 'mail' => '1人目のemail', 'tel' => '080-0000-0001'],
@@ -22,12 +20,9 @@ class HelloController extends AppController
 
   public function index()
   {
-    $id = $this->request->query['id'] ?? 'no id';
-    $pass = $this->request->query['pass'] ?? 'no pass';
-
-    $this->p('HelloControllerのindexアクションです');
-    $this->p('id : ' . $id);
-    $this->p('pass : ' . $pass);
+    $this->viewBuilder()->autoLayout(false);
+    $this->set('title', 'Hello!');
+    $this->set('message', 'This is message!');
   }
 
   public function data()
