@@ -22,7 +22,6 @@ class HelloController extends AppController
   {
     $this->viewBuilder()->autoLayout(false);
     $this->set('title', 'Hello!');
-    $this->set('message', 'This is message!');
   }
 
   public function data()
@@ -39,5 +38,20 @@ class HelloController extends AppController
       }
     }
     echo json_encode($retObj, JSON_UNESCAPED_UNICODE);
+  }
+
+  public function form()
+  {
+    $this->viewBuilder()->autoLayout(false);
+    $name = $this->request->data['name'];
+    $mail = $this->request->data['mail'];
+    $age = $this->request->data['age'];
+    $res = 'こんにちは、 ' . $name . '（' . $age .
+      '）さん。メールアドレスは、' . $mail . ' ですね？';
+    $values = [
+      'title' => 'Result',
+      'message' => $res
+    ];
+    $this->set($values);
   }
 }

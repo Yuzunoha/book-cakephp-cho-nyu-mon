@@ -24,7 +24,34 @@
     <h1><?= $title ?></h1>
   </header>
   <div class="row">
-    <p><?= $message ?></p>
+    <table>
+      <?php
+      echo $this->Form->create('hello', ['type' => 'post', 'action' => 'form']);
+      ?>
+      <tr>
+        <th>name</th>
+        <td>
+          <input type="text" name="name"></td>
+      </tr>
+      <tr>
+        <th>mail</th>
+        <td>
+          <input type="text" name="mail"></td>
+      </tr>
+      <tr>
+        <th>age</th>
+        <td>
+          <input type="number" name="age"></td>
+      </tr>
+      <tr>
+        <th></th>
+        <td><button>
+            Click</button></td>
+      </tr>
+      <?php
+      echo $this->Form->end();
+      ?>
+    </table>
   </div>
 </body>
 
