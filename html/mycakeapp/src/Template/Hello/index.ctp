@@ -26,7 +26,13 @@
   <div class="row">
     <table>
       <?php
-      echo $this->Form->create('hello', ['type' => 'post', 'action' => 'form']);
+      echo $this->Form->create(null, [
+        'type' => 'post',
+        'url' => [
+          'controller' => 'Hello',
+          'action' => 'form'
+        ],
+      ]);
       ?>
       <tr>
         <th>name</th>
