@@ -23,9 +23,8 @@ class HelloController extends AppController
     $this->viewBuilder()->autoLayout(false);
     $this->set('title', 'Hello!');
 
-    if ($this->request->isPost()) {
-    } else {
-    }
+    $data = $this->request->isPost() ? $this->request->data['Form1'] : [];
+    $this->set('data', $data);
   }
 
   public function data()
