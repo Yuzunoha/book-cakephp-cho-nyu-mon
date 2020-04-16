@@ -53,6 +53,16 @@
           ]) ?></td>
       </tr>
       <tr>
+        <th>select</th>
+        <td>
+          <?= $this->Form->select('Form1.select', [
+            'one' => '壱',
+            'two' => '弐',
+            'three' => '参',
+          ]) ?>
+        </td>
+      </tr>
+      <tr>
         <th></th>
         <td>
           <?= $this->Form->submit('送信') ?></td>
