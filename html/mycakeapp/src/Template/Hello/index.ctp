@@ -55,11 +55,18 @@
       <tr>
         <th>select</th>
         <td>
-          <?= $this->Form->select('Form1.select', [
-            'one' => '壱',
-            'two' => '弐',
-            'three' => '参',
-          ]) ?>
+          <?= $this->Form->select(
+            'Form1.select',
+            [
+              'one' => '壱',
+              'two' => '弐',
+              'three' => '参',
+            ],
+            [
+              'multiple' => true,
+              'size' => 3,
+            ]
+          ) ?>
         </td>
       </tr>
       <tr>
