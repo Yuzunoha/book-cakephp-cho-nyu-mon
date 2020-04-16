@@ -20,11 +20,6 @@ class HelloController extends AppController
 
   public function index()
   {
-    $this->viewBuilder()->autoLayout(false);
-    $this->set('title', 'Hello!');
-
-    $data = $this->request->isPost() ? $this->request->data : [];
-    $this->set('data', $data);
   }
 
   public function data()
