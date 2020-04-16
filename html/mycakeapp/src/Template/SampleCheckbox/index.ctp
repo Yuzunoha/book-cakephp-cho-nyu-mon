@@ -42,22 +42,21 @@
         ]
       );
 
-      //labelの生成
-      echo $this->Form->label('性別を選択してください');
-      echo '<br>';
+      // チェックボックスの作成
+      echo $this->Form->input('checkbox1', [
+        'type' => 'checkbox',
+        'label' => 'チェック1',
+      ]);
+      echo $this->Form->input('checkbox2', [
+        'type' => 'checkbox',
+        'label' => 'チェック2',
+      ]);
+      echo $this->Form->input('checkbox3', [
+        'type' => 'checkbox',
+        'label' => 'チェック3',
+      ]);
 
-      //radioボタンの作成
-      $options = [
-        'other' => 'その他',
-        'male' => '男性',
-        'female' => '女性',
-      ];
 
-      $attributes = [
-        'value' => 'other',
-      ];
-
-      echo $this->Form->radio('radioSex', $options, $attributes);
 
       //フォームの送信
       echo $this->Form->submit('送信');
