@@ -22,6 +22,10 @@ class HelloController extends AppController
   {
     $this->viewBuilder()->autoLayout(false);
     $this->set('title', 'Hello!');
+
+    if ($this->request->isPost()) {
+    } else {
+    }
   }
 
   public function data()

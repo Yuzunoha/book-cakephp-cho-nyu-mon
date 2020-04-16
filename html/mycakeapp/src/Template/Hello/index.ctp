@@ -24,39 +24,41 @@
     <h1><?= $title ?></h1>
   </header>
   <div class="row">
+    <pre><?php print_r($data); ?></pre>
+  </div>
+  <div class="row">
     <table>
-      <?php
-      echo $this->Form->create(null, [
-        'type' => 'post',
-        'url' => [
-          'controller' => 'Hello',
-          'action' => 'form'
-        ],
-      ]);
-      ?>
+      <?= $this->Form->create(
+        null,
+        [
+          'type' => 'post',
+          'url' => [
+            'controller' => 'Hello',
+            'action' => 'index'
+          ]
+        ]
+      ) ?>
       <tr>
         <th>name</th>
         <td>
-          <input type="text" name="name"></td>
+          <?= $this->Form->text('Form1.name') ?></td>
       </tr>
       <tr>
         <th>mail</th>
         <td>
-          <input type="text" name="mail"></td>
+          <?= $this->Form->text('Form1.mail') ?></td>
       </tr>
       <tr>
         <th>age</th>
         <td>
-          <input type="number" name="age"></td>
+          <?= $this->Form->text('Form1.age') ?></td>
       </tr>
       <tr>
         <th></th>
-        <td><button>
-            Click</button></td>
+        <td>
+          <?= $this->Form->submit('送信') ?></td>
       </tr>
-      <?php
-      echo $this->Form->end();
-      ?>
+      <?= $this->Form->end() ?>
     </table>
   </div>
 </body>
