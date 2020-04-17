@@ -18,6 +18,11 @@ class HelloController extends AppController
     echo $a . '<br>';
   }
 
+  public function initialize()
+  {
+    $this->viewBuilder()->setLayout('hello');
+  }
+
   public function index()
   {
   }
