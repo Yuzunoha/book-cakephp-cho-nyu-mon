@@ -10,18 +10,13 @@
 
 <body>
   <header class="head row">
-    <?= $this->element('header', ['subtitle' => 'cakephp sample page']) ?>
+    <?= $this->element('header', $data['header']) ?>
   </header>
   <div class="content row">
-    <?php
-    echo '<pre>';
-    print_r($data);
-    echo '</pre>';
-    ?>
     <?= $this->fetch('content') ?>
   </div>
   <footer class="foot row">
-    <?= $this->element('footer', ['copyright' => 'YAMADA-TARO']) ?>
+    <?= $this->element('footer', $data['footer']) ?>
   </footer>
 </body>
 

@@ -27,8 +27,12 @@ class HelloController extends AppController
   {
     // ビューに値を渡す
     $this->set('data', [
-      'subtitle' => 'cakephp sample page',
-      'copyright' => 'YAMADA-TARO',
+      'header' => [
+        'subtitle' => 'cakephp sample page.これはコントローラで入れたheader情報です。',
+      ],
+      'footer' => [
+        'copyright' => 'YAMADA-TARO. これはコントローラで入れたfooter情報です',
+      ],
     ]);
   }
 
