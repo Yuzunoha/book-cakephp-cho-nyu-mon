@@ -13,6 +13,11 @@
     <?= $this->element('header', ['subtitle' => 'cakephp sample page']) ?>
   </header>
   <div class="content row">
+    <?php
+    echo '<pre>';
+    print_r($data);
+    echo '</pre>';
+    ?>
     <?= $this->fetch('content') ?>
   </div>
   <footer class="foot row">
