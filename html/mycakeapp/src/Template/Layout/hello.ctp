@@ -10,13 +10,13 @@
 
 <body>
   <header class="head row">
-    <?= $this->element('header', $data['header']) ?>
+    <?= $this->element('header', $header) ?>
   </header>
   <div class="content row">
     <?= $this->fetch('content') ?>
   </div>
   <footer class="foot row">
-    <?= $this->element('footer', $data['footer']) ?>
+    <?= $this->element('footer', $footer) ?>
   </footer>
 </body>
 
