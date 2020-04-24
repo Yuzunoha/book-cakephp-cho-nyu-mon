@@ -29,4 +29,43 @@ class PeopleController extends AppController
       'action' => 'index',
     ]);
   }
+
+  public function edit()
+  {
+    $id = $this->request->query['id'];
+    $entity = $this->People->get($id);
+    $this->set('entity', $entity);
+  }
+
+  public function update()
+  {
+    if ($this->request->is('post')) {
+      $data = $this->request->data['People'];
+      $entity = $this->People->get($data['id']);
+      $this->People->patchEntity($entity, $data);
+      $this->People->save($entity);
+    }
+    return $this->redirect([
+      'action' => 'index',
+    ]);
+  }
+
+  public function delete()
+  {
+    $id = $this->request->query['id'];
+    $entity = $this->People->get($id);
+    $this->set('entity', $entity);
+  }
+
+  public function destroy()
+  {
+    if ($this->request->is('post')) {
+      $data = $this->request->data['People'];
+      $entity = $this->People->get($data['id']);
+      $this->People->delete($entity);
+    }
+    return $this->redirect([
+      'action' => 'index',
+    ]);
+  }
 }
