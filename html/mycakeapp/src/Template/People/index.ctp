@@ -26,6 +26,9 @@
     </tr>
   </thead>
   <?php
+  $data = $dataArr['data'];
+  $debugData = $dataArr['debugData'];
+  print_r($debugData);
   foreach ($data->toArray() as $obj) : ?>
     <tr>
       <td><?= h($obj->id) ?></td>
