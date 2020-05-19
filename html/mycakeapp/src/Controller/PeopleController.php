@@ -10,25 +10,17 @@ class PeopleController extends AppController
   {
     if ($this->request->isPost()) {
       $find = $this->request->data['People']['find']; // '  20  ,  40 '
-      $a = explode(',', $find);
-      $min = intval(trim($a[0])); // 20
-      $max = intval(trim($a[1])); // 40
-      $condition = [
-        'conditions' => [
-          'and' => [
-            'age >=' => $min,
-            'age <=' => $max,
-          ],
-        ],
-      ];
-      $data = $this->People->find('all', $condition);
+      $condition = ['name like' => $find];
     } else {
-      $data = $this->People->find('all');
+      $condition = [];
     }
-    $debugData = 'find : ' . $find;
+    $data = $this->People->find('all', [
+      'conditions' => $condition,
+      'order' => ['People.age' => 'desc']
+    ]);
     $this->set('dataArr', [
       'data' => $data,
-      'debugData' => $debugData,
+      'debugData' => 'デバッグ用',
     ]);
   }
 
