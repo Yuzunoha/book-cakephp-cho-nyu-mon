@@ -47,12 +47,14 @@ class PeopleTable extends Table
 
     $validator
       ->scalar('mail')
-      ->allowEmpty('mail');
+      ->allowEmpty('mail')
+      ->email('mail');
 
     $validator
       ->integer('age')
       ->requirePresence('age', 'create')
-      ->notEmpty('age');
+      ->notEmpty('age')
+      ->greaterThan('age', -1);
 
     return $validator;
   }
