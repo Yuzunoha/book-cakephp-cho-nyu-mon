@@ -37,24 +37,24 @@ class PeopleTable extends Table
   public function validationDefault(Validator $validator)
   {
     $validator
-      ->integer('id')
+      ->integer('id', 'idは整数で入力下さい。')
       ->allowEmpty('id', 'create');
 
     $validator
-      ->scalar('name')
+      ->scalar('name', 'テキストを入力下さい。')
       ->requirePresence('name', 'create')
-      ->notEmpty('name');
+      ->notEmpty('name', '名前は必ず記入して下さい。');
 
     $validator
-      ->scalar('mail')
+      ->scalar('mail', 'テキストを入力下さい。')
       ->allowEmpty('mail')
-      ->email('mail');
+      ->email('mail', false, 'メールアドレスを記入して下さい。');
 
     $validator
-      ->integer('age')
+      ->integer('age', '整数を入力下さい。')
       ->requirePresence('age', 'create')
-      ->notEmpty('age')
-      ->greaterThan('age', -1);
+      ->notEmpty('age', '必ず値を入力下さい。')
+      ->greaterThan('age', -1, 'ゼロ以上の値を記入下さい。');
 
     return $validator;
   }
