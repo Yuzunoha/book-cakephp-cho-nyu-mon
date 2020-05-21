@@ -1,10 +1,11 @@
+<p><?= $msg ?></p>
 <?= $this->Form->create(
   $entity,
   [
     'type' => 'post',
     'url' => [
       'controller' => 'People',
-      'action' => 'create'
+      'action' => 'add'
     ]
   ]
 ) ?>
