@@ -8,19 +8,23 @@ class PeopleController extends AppController
 {
   public function index()
   {
+    $page = 1;
+    $debug = '実行されなかった';
     if ($this->request->isPost()) {
-      $page = intval($this->request->data['People']['find']);
-    } else {
-      $page = 1;
+      $find = $this->request->data['People']['find'];
+      if (ctype_digit($find)) {
+        $debug = '実行された';
+        $page = intval($find);
+      }
     }
-    $data = $this->People->find('all', [
-      // 'order' => ['People.age' => 'desc'],
-      'page' => $page,
-      'limit' => 3,
-    ]);
+    $data = $this->People->find('all')
+      ->limit(3)
+      ->page($page)
+      ->order(['name' => 'asc'])
+      ->order(['age' => 'asc']);
     $this->set('dataArr', [
       'data' => $data,
-      'debugData' => 'デバッグ用',
+      'debugData' => [$debug, $find],
     ]);
   }
 
