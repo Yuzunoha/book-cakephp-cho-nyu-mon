@@ -14,3 +14,20 @@
     ['style' => ['background:#dff']]
   ) ?>
 </table>
+
+<ul>
+  <?= $this->Html->nestedList(
+    [
+      'first line',
+      'second line',
+      'third line' => [
+        'one',
+        'two' => [
+          'two one',
+          'two two'
+        ],
+        'three'
+      ]
+    ]
+  ) ?>
+</ul>
