@@ -203,4 +203,4 @@ Type::build('timestamp')
 //Inflector::rules('uninflected', ['dontinflectme']);
 //Inflector::rules('transliteration', ['/å/' => 'aa']);
 
-Plugin::load('Migrations');
+\App\Application::addPlugin('Migrations');
