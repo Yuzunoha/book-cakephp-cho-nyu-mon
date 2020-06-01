@@ -10,10 +10,11 @@ class PeopleController extends AppController
   {
     if ($this->request->isPost()) {
       $find = $this->request->data['People']['find'];
-      $data = $this->People->find('me', ['me' => $find]);
+      $data = $this->People->find('me', ['me' => $find])->contain(['Messages']);
     } else {
-      $data = $this->People->find('byAge');
+      $data = $this->People->find('byAge')->contain(['Messages']);
     }
+
     $this->set(['data' => $data]);
   }
 
