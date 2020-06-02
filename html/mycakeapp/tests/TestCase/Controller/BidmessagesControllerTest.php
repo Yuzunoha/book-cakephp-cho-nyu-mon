@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Test\TestCase\Controller;
 
 use App\Controller\BidmessagesController;
@@ -21,7 +22,7 @@ class BidmessagesControllerTest extends TestCase
      */
     public $fixtures = [
         'app.Bidmessages',
-        'app.Bidinfos',
+        'app.Bidinfo',
         'app.Users',
     ];
 

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Test\TestCase\Model\Table;
 
 use App\Model\Table\BidmessagesTable;
@@ -24,7 +25,7 @@ class BidmessagesTableTest extends TestCase
      */
     public $fixtures = [
         'app.Bidmessages',
-        'app.Bidinfos',
+        'app.Bidinfo',
         'app.Users',
     ];
 
