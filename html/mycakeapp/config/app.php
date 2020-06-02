@@ -8,15 +8,15 @@ use Cake\Log\Engine\FileLog;
 use Cake\Mailer\Transport\MailTransport;
 
 return [
-    /**
-     * Debug Level:
-     *
-     * Production Mode:
-     * false: No error messages, errors, or warnings shown.
-     *
-     * Development Mode:
-     * true: Errors and warnings shown.
-     */
+	/**
+	 * Debug Level:
+	 *
+	 * Production Mode:
+	 * false: No error messages, errors, or warnings shown.
+	 *
+	 * Development Mode:
+	 * true: Errors and warnings shown.
+	 */
     'debug' => filter_var(env('DEBUG', true), FILTER_VALIDATE_BOOLEAN),
 
     /**
