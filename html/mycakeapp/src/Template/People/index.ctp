@@ -2,10 +2,10 @@
 <table>
   <thead>
     <tr>
-      <th>id</th>
-      <th>name</th>
-      <th>mail</th>
-      <th>age</th>
+      <th><?= $this->Paginator->sort('id') ?></th>
+      <th><?= $this->Paginator->sort('name') ?></th>
+      <th><?= $this->Paginator->sort('mail') ?></th>
+      <th><?= $this->Paginator->sort('age') ?></th>
       <th>message</th>
     </tr>
   </thead>
